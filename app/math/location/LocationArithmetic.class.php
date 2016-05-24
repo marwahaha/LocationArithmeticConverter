@@ -7,7 +7,8 @@ class LocationArithmeticConvert {
     protected $locationNotation;
     protected $maxPower = 25;
     
-    private function _closestPowerFastest($numeral) {
+    // $closestPower =  ($tmpPower =  floor((log($numeral) / log(2)))) > $this->maxPower ? $this->maxPower : $tmpPower;
+    private function _closestPowerFastest($numeral) {        
         $power =  floor((log($numeral) / log(2)));
         if ($power > $this->maxPower) {
             return $this->maxPower;
@@ -40,9 +41,6 @@ class LocationArithmeticConvert {
         $notationArray = array();
         while ($numeral > 0) {
             $closestPower = $this->_closestPower($numeral);
-            $closestPower1 = $this->_closestPowerFaster($numeral);
-            $closestPower2 = $this->_closestPowerFastest($numeral);
-            echo "$closestPower :: $closestPower1 :: $closestPower2\n";
             $notationArray[] = $closestPower;
             $numeral -= pow(2, $closestPower);
         }
