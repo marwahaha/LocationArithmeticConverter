@@ -6,6 +6,17 @@ class LocationArithmeticConvert {
     protected $locationNumeral;
     protected $locationNotation;
     protected $maxPower = 25;
+    
+    private function _closestPowerFaster($numeral) {
+        $answer = 1;
+        $power = 0;
+        while (($answer <= $numeral) && ($answer < 67108864)) {
+            $answer *= 2;
+            $power++;
+        }
+        
+        return --$power;        
+    }    
 
     private function _closestPower($numeral) {
         $power = 0;
@@ -58,49 +69,3 @@ class LocationArithmeticConvert {
         return $this->_createLocationNotation($this->_createLocationNumeral($notation));
     }
 }
-
-$locat = new LocationArithmeticConvert();
-
-echo $locat->getLocationNumeral('abbc');
-echo "\n";
-echo $locat->abreviateLocationNotation('abbc');
-echo "\n";
-echo $locat->getLocationNotation(9);
-
-echo "\n\n";
-echo $locat->getLocationNumeral('abceg');
-echo "\n";
-echo $locat->abreviateLocationNotation('abceg');
-echo "\n";
-echo $locat->getLocationNotation(87);
-
-echo "\n\n";
-echo $locat->getLocationNumeral('abdgkl');
-echo "\n";
-echo $locat->abreviateLocationNotation('abdgkl');
-echo "\n";
-echo $locat->getLocationNotation(3147);
-
-echo "\n\n";
-echo $locat->getLocationNumeral('z');
-echo "\n";
-echo $locat->abreviateLocationNotation('z');
-echo "\n";
-echo $locat->getLocationNotation(33554432);
-
-echo "\n\n";
-echo $locat->getLocationNumeral('aabcdefghijklmnopqrstuvwxyz');
-echo "\n";
-echo $locat->abreviateLocationNotation('aabcdefghijklmnopqrstuvwxyz');
-echo "\n";
-echo $locat->getLocationNotation(67108864);
-
-echo "\n\n";
-echo $locat->getLocationNotation(67108865);
-
-echo "\n\n";
-echo $locat->getLocationNumeral('a');
-echo "\n";
-echo $locat->abreviateLocationNotation('a');
-echo "\n";
-echo $locat->getLocationNotation(1);
