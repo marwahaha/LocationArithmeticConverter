@@ -53,3 +53,44 @@ class StupidTest extends\PHPUnit_Framework_TestCase {
         $this->assertEquals($locat->getLocationNotation(33554432), 'zz');
     }
 }
+
+/*
+$locat = new LocationArithmeticConvert();
+echo $locat->getLocationNumeral('abbc');
+echo "\n";
+echo $locat->abreviateLocationNotation('abbc');
+echo "\n";
+echo $locat->getLocationNotation(9);
+echo "\n\n";
+echo $locat->getLocationNumeral('abceg');
+echo "\n";
+echo $locat->abreviateLocationNotation('abceg');
+echo "\n";
+echo $locat->getLocationNotation(87);
+echo "\n\n";
+echo $locat->getLocationNumeral('abdgkl');
+echo "\n";
+echo $locat->abreviateLocationNotation('abdgkl');
+echo "\n";
+echo $locat->getLocationNotation(3147);
+echo "\n\n";
+echo $locat->getLocationNumeral('z');
+echo "\n";
+echo $locat->abreviateLocationNotation('z');
+echo "\n";
+echo $locat->getLocationNotation(33554432);
+echo "\n\n";
+echo $locat->getLocationNumeral('aabcdefghijklmnopqrstuvwxyz');
+echo "\n";
+echo $locat->abreviateLocationNotation('aabcdefghijklmnopqrstuvwxyz');
+echo "\n";
+echo $locat->getLocationNotation(67108864);
+echo "\n\n";
+echo $locat->getLocationNotation(67108865);
+echo "\n\n";
+echo $locat->getLocationNumeral('a');
+echo "\n";
+echo $locat->abreviateLocationNotation('a');
+echo "\n";
+echo $locat->getLocationNotation(1);
+*/
